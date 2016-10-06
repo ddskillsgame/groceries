@@ -34,4 +34,9 @@ export class HeroDetailComponent implements OnInit {
     this.location.back();  // This works for a demo - not real life check out CanDeactivate guard
   }
 
+  save(): void {
+    this.heroService.update(this.hero)
+      .then(() => this.goBack());
+  }
+
 }
